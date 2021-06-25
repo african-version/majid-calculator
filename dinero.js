@@ -55,68 +55,20 @@ function calculate (firstNumber, operator, secondNumber) {
   if (operator === 'plus') return firstNumber + secondNumber
   if (operator === 'minus') return firstNumber - secondNumber
   if (operator === 'times') return firstNumber * secondNumber
-  if (operator === 'divide') return firstNumber / secondNumber
+  if (operator === 'division') return firstNumber / secondNumber
+  if (operator === 'sin') return Math.sin(Math.PI / firstNumber)
+  if (operator === 'cos') return Math.cos(firstNumber)
+  if (operator === 'tan') return  Math.tan(firstNumber * Math.PI / 180)
+  if (operator === 'root') return Math.sqrt(firstNumber)
+  if (operator === 'pie') return Math.PI
+  if (operator === 'percent') return (firstNumber / 100)
+  if (operator === 'in') return Math.log2(firstNumber)
+  if (operator === 'log') return Math.log(firstNumber)
+  if (operator === 'power') return Math.pow(firstNumber, secondNumber)
+  if (operator === 'rad') return firstNumber / (Math.PI / 180)
+  if (operator === 'deg') return firstNumber * (180 / Math.PI)
+
+  if (operator === 'factorial') return (firstNumber) * (firstNumber - 1) * (firstNumber - 2) * (firstNumber - 3) * (firstNumber - 4)
+  if (operator === 'bracket1') return firstNumber
 }
 
-
-//  ========================
-//  TESTING
-//  ========================
-//  function clearCalculator () {
-//    // Press the clear key
-//    const clearKey = document.querySelector('[data-type="clear"]')
-//    clearKey.click()
-//    // Clear operator states
-//    operatorKeys.forEach(key => { key.dataset.state = '' })
-//  }
-//  function testClearKey () {
-//    clearCalculator()
-//    console.assert(display.textContent === '0', 'Clear key. Display should be 0')
-//    console.assert(!calculator.dataset.firstNumber, 'Clear key. No first number remains')
-//    console.assert(!calculator.dataset.operator, 'Clear key. No operator remains')
-//  }
-//  function testKeySequence (test) {
-//    // Press keys
-//    test.keys.forEach(key => {
-//      document.querySelector(`[data-key="${key}"]`).click()
-//    })
-//    // Assertion
-//    console.assert(display.textContent === test.value, test.message)
-//    // Clear calculator
-//    clearCalculator()
-//    testClearKey()
-//  }
-//  const tests = [{
-//    keys: ['1'],
-//    value: '1',
-//    message: 'Click 1'
-//  }, {
-//    keys: ['1', '5'],
-//    value: '15',
-//    message: 'Click 15'
-//  }, {
-//    keys: ['1', '5', '9'],
-//    value: '159',
-//    message: 'Click 159'
-//  }, {
-//    keys: ['2', '4', 'plus', '7', 'equal'],
-//    value: '31',
-//    message: 'Calculation with plus'
-//  }, {
-//    keys: ['3', 'minus', '7', '0', 'equal'],
-//    value: '-67',
-//    message: 'Calculation with minus'
-//  }, {
-//    keys: ['1', '5', 'times', '9', 'equal'],
-//    value: '135',
-//    message: 'Calculation with times'
-//  }, {
-//    keys: ['9', 'divide', '3', 'equal'],
-//    value: '3',
-//    message: 'Calculation with divide'
-//  }, {
-//    keys: ['9', 'divide', '0', 'equal'],
-//    value: 'Infinity',
-//    message: 'Calculation. Divide by 0'
-//  }]
-//  tests.forEach(testKeySequence)
